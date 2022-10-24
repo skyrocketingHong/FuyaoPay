@@ -1,7 +1,6 @@
 import { useI18n } from '@solid-primitives/i18n'
 import { createEffect, createSignal, For, JSX } from 'solid-js'
 import QRCode from 'qrcode'
-import { createCanvas } from 'canvas'
 import parse from 'ua-parser-js'
 import './App.css'
 
@@ -104,7 +103,7 @@ const Payments = () => {
                 <div class="icon">{item.icon}</div>
                 <img
                   ref={(el) => {
-                    const canvas = createCanvas(320, 320)
+                    const canvas = document.createElement('canvas')
                     QRCode.toCanvas(
                       canvas,
                       item.link,
@@ -114,7 +113,7 @@ const Payments = () => {
                       (err) => {}
                     )
                     const ctx = canvas.getContext('2d')
-                    ctx.imageSmoothingEnabled = false
+                    ctx!.imageSmoothingEnabled = false
                     el.src = canvas.toDataURL('image/png')
                   }}
                   class="qrcode"
