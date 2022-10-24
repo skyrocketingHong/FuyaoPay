@@ -100,9 +100,14 @@
   transition: all 0.4s;
 }
 
-@media (max-width: 768px) {
+@media screen and (prefers-color-scheme: dark) {
   .payment {
     background-color: #ffffff1a;
+  }
+}
+
+@media (max-width: 768px) {
+  .payment {
     border-radius: 16px;
   }
 }
