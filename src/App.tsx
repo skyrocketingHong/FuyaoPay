@@ -5,7 +5,7 @@ import parse from 'ua-parser-js'
 import './App.css'
 
 const App = () => {
-  const [t] = useI18n()
+  const [t, { locale }] = useI18n()
 
   return (
     <>
@@ -16,6 +16,9 @@ const App = () => {
         </div>
         <p class="select-payment">{t('payment')}</p>
         <Payments />
+        <footer>
+          <p>© 2022 {t('yanren')} </p>
+        </footer>
       </div>
     </>
   )
@@ -142,13 +145,13 @@ const LanguageSwitcher = () => {
     },
   ]
 
-  const [_, { locale }] = useI18n()
+  const [t, { locale }] = useI18n()
 
   createEffect(() => {
     if (locale() === 'en') {
-      document.title = "I'm Yanren"
+      document.title = t('payTitle')
     } else {
-      document.title = '我是炎忍'
+      document.title = t('payTitle')
     }
   })
 
