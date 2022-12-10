@@ -41,7 +41,7 @@ const Payments = () => {
     {
       id: 'alipay',
       icon: <i class="fa-brands fa-alipay"></i>,
-      link: 'https://qr.alipay.com/fkx07170tzxfnbs56z5ejdb/',
+      link: 'https://qr.alipay.com/fkx17810vgkiizqwtcqebfc',
       type: 'qrcode',
     },
     {
