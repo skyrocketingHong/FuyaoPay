@@ -1,0 +1,164 @@
+.select-payment {
+  font-size: 18px;
+  margin-top: 32px;
+}
+
+.payments {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 50px;
+}
+
+.payment-container {
+  display: grid;
+  width: 50%;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: all 0.5s;
+
+  .payment {
+    min-height: 100px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9fafb;
+    border-radius: 32px;
+
+    & > .icon {
+      position: absolute;
+    }
+
+    & > .qrcode {
+      border-radius: 32px;
+      display: block;
+      width: 80% !important;
+      height: auto !important ;
+      aspect-ratio: 1/1;
+      visibility: hidden;
+      transform: translateY(-80%);
+      transition: transform 400ms, visibility 100ms;
+    }
+
+    & > .close {
+      display: none !important;
+    }
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    > .payment {
+      background-color: #ffffff1a;
+    }
+  }
+
+  &:hover {
+    width: 100%;
+
+    > .payment:hover > .icon {
+      color: #fff;
+    }
+
+    &.alipay:hover > .payment {
+      background-color: #027aff;
+    }
+
+    &.wechat:hover > .payment {
+      background-color: #1aad19;
+    }
+
+    &.qq:hover > .payment {
+      background-color: #01c5ff;
+    }
+  }
+
+  &.open {
+    cursor: default;
+    position: relative;
+    width: 80%;
+    grid-template-rows: 1fr;
+    flex-direction: column;
+    justify-content: space-around;
+
+    > .payment {
+      aspect-ratio: 1/1;
+
+      & > .icon {
+        display: none;
+      }
+
+      & > .close {
+        cursor: pointer;
+        display: block !important;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        height: 40px;
+        width: 40px;
+        color: #fff;
+        transition: 0.4s;
+
+        &:hover {
+          color: red;
+        }
+      }
+
+      & > .qrcode {
+        visibility: visible;
+        transform: translateY(0%);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+
+    &.open {
+      width: 100%;
+
+      > .payment {
+        & > .close {
+          top: 8px;
+          right: 8px;
+          height: 32px;
+          width: 32px;
+        }
+      }
+    }
+
+    & > .payment {
+      border-radius: 16px;
+
+      .qrcode {
+        border-radius: 16px;
+      }
+    }
+
+    .payment.open {
+      margin-top: -100px;
+
+      > .qrcode {
+        font-size: 28px;
+        top: 16px;
+        right: 16px;
+      }
+
+      > .icon {
+        border-radius: 16px;
+      }
+    }
+  }
+
+  &.alipay.open > .payment {
+    background-color: #027aff;
+  }
+
+  &.wechat.open > .payment {
+    background-color: #1aad19;
+  }
+
+  &.qq.open > .payment {
+    background-color: #01c5ff;
+  }
+}
