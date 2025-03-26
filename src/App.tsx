@@ -4,9 +4,10 @@ import './App.css'
 import { Payments } from './components/payments'
 
 const App = () => {
+  const currentYear = new Date().getFullYear();
   return (
     <>
-      <div class="outfit home">
+      <div class="font home">
         <LanguageSwitcher />
         <div class="title-box">
           <p>{t('payTitle')}</p>
@@ -14,7 +15,13 @@ const App = () => {
         <p class="select-payment">{t('payment')}</p>
         <Payments />
         <footer>
-          <p>© 2023 {t('yanren')} </p>
+          <p>{t('thanks')}&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;{t('visit')}</p>
+          <p>Serverd by&nbsp;
+            <a href="https://cn.aliyun.com/chinaglobal/home" rel="noopener noreferrer" target="_blank">Aliyun Hong Kong</a>
+            &nbsp;&&nbsp;
+            <a href="https://caddyserver.com/v2" rel="noopener" target="_blank">Caddy 2</a>
+          </p>
+          <p>&copy;&nbsp;2016&nbsp;-&nbsp;{currentYear} <a href="https://github.com/skyrocketingHong/FuyaoPay" rel="noopener" target="_blank">{t('skyrocketing')}</a></p>
         </footer>
       </div>
     </>
@@ -50,7 +57,7 @@ const LanguageSwitcher = () => {
               <p
                 classList={{ active: locale() === item.lan }}
                 onClick={() => setLocale(item.lan)}
-                class="outfit"
+                class="font"
               >
                 {item.text}
               </p>

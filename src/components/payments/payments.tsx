@@ -26,19 +26,19 @@ const Payments = () => {
     {
       id: 'alipay',
       icon: 'i-ri-alipay-fill',
-      link: 'https://qr.alipay.com/fkx17810vgkiizqwtcqebfc',
+      link: 'https://qr.alipay.com/fkx11284wewb6r1q6rivs74',
       type: 'qrcode',
     },
     {
       id: 'wechat',
       icon: 'i-ri-wechat-fill',
-      link: 'wxp://f2f0tkJn97xBE_AALRqk5GQGYH5cu7L9keLG',
+      link: 'wxp://f2f0nIJSf6PcLP6XVwmqScZVGCGoB36xv6j-w8HGUeFMx9E=',
       type: 'qrcode',
     },
     {
       id: 'qq',
       icon: 'i-ri-qq-fill',
-      link: 'https://i.qianbao.qq.com/wallet/sqrcode.htm?m=tenpay&f=wallet&a=1&ac=F18F01A9E9104C71F8C43BE384C96F6213F4F51B993ACEA8806A94F08944E1C9&u=2323355219&n=%E6%B1%9D%E5%8D%97%E4%BA%AC',
+      link: 'https://i.qianbao.qq.com/wallet/sqrcode.htm?m=tenpay&a=1&u=1055823718&ac=CAEQ5q669wMYwsWJvwY4AEIgNjkxMWFhN2RhMTBkNzRkOTE5NTBmMWNkZjVmYWI0NGM%3D_xxx_sign&n=%E6%89%B6%E6%91%87skyrocketing&f=wallet',
       type: 'qrcode',
     },
   ]
@@ -50,7 +50,7 @@ const Payments = () => {
       console.log(UA.device.type)
       if (payment.id === 'alipay' && UA.device.type === 'mobile') {
         window.open(
-          'alipays://platformapi/startapp?appId=10000007&qrcode=https://qr.alipay.com/fkx07170tzxfnbs56z5ejdb',
+          'alipays://platformapi/startapp?appId=10000007&qrcode=https://qr.alipay.com/fkx11284wewb6r1q6rivs74',
           '_blank'
         )
         return

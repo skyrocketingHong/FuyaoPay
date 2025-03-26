@@ -1,6 +1,6 @@
 .home {
   padding: 8vh 1.5rem;
-  max-width: 76ch;
+  max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -11,31 +11,31 @@
 
 .title-box > p {
   font-size: 3rem;
-  line-height: 1;
-  font-weight: bold;
+  line-height: 1.5;
+  font-weight: 1000;
   color: transparent;
   background-clip: text;
   background-image: radial-gradient(
-      closest-side,
-      rgba(235, 105, 78, 1),
-      rgba(235, 105, 78, 0)
-    ),
-    radial-gradient(closest-side, rgba(243, 11, 164, 1), rgba(143, 11, 164, 0)),
-    radial-gradient(
-      closest-side,
-      rgba(254, 234, 131, 1),
-      rgba(254, 234, 131, 0)
-    ),
-    radial-gradient(
-      closest-side,
-      rgba(170, 142, 245, 1),
-      rgba(170, 142, 245, 0)
-    ),
-    radial-gradient(
-      closest-side,
-      rgba(248, 192, 147, 1),
-      rgba(248, 192, 147, 0)
-    );
+    closest-side,
+    rgba(220, 80, 0, 1),
+    rgba(220, 80, 0, 0)
+  ),
+  radial-gradient(closest-side, rgba(200, 60, 0, 1), rgba(200, 60, 0, 0)),
+  radial-gradient(
+    closest-side,
+    rgba(230, 100, 0, 1),
+    rgba(230, 100, 0, 0)
+  ),
+  radial-gradient(
+    closest-side,
+    rgba(240, 120, 20, 1),
+    rgba(240, 120, 20, 0)
+  ),
+  radial-gradient(
+    closest-side,
+    rgba(210, 90, 10, 1),
+    rgba(210, 90, 10, 0)
+  );
   background-size: 130vmax 130vmax, 80vmax 80vmax, 90vmax 90vmax,
     110vmax 110vmax, 90vmax 90vmax;
   background-position: -80vmax -80vmax, 60vmax -30vmax, 10vmax 10vmax,
@@ -122,4 +122,10 @@ footer > p {
   opacity: 0.4;
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+a {
+  color: inherit;
+  border-bottom: 1px solid var(--secondary);
+  text-decoration: none;
 }
